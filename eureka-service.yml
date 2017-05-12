@@ -14,6 +14,7 @@ spring:
 eureka:
   client:
     enabled: true
+    # cluster of 2, if you need more, keep adding here
     service-url:
       defaultZone: http://eureka-service-0.eureka-service/eureka/,http://eureka-service-1.eureka-service/eureka/
     healthcheck:
