@@ -1,24 +1,28 @@
-server
-  port=${PORT:8761}
-
-
 #eureka.client.register-with-eureka=false
 #eureka.client.fetch-registry=false
 #eureka.client.enabled=false
 
 eureka:
-    client:
-      service-url:
-        defaultZone: http://eureka-service-0.eureka-service.eregistry.svc.cluster.local:8761/eureka/,http://eureka-service-1.eureka-service.eregistry.svc.cluster.local:8761/eureka/
+  client:
+    service-url:
+      defaultZone: http://eureka-service-0.eureka-service.eregistry.svc.cluster.local:8761/eureka/,http://eureka-service-1.eureka-service.eregistry.svc.cluster.local:8761/eureka/
+    enabled: true
+    healthcheck:
       enabled: true
-      healthcheck:
-        enabled: true
-      fetch-registry: true
-      register-with-eureka: true
-      instance-info-replication-interval-seconds: 10
-      registry-fetch-interval-seconds: 10
-    instance:
-      lease-renewal-interval-in-seconds: 5
-      lease-expiration-duration-in-seconds: 10
-      metadata-map:
-        zone: primary 
+    fetch-registry: true
+    register-with-eureka: true
+    instance-info-replication-interval-seconds: 10
+    registry-fetch-interval-seconds: 10
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+    metadata-map:
+      zone: primary
+  server:
+    registry-sync-retry-wait-ms: 500
+    eviction-interval-timer-in-ms: 30000
+    a-s-g-cache-expiry-timeout-ms: 60000
+    peer-eureka-nodes-update-interval-ms: 30000
+    renewal-threshold-update-interval-ms: 15000
+server:
+  port: ${PORT:8761}
