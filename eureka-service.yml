@@ -11,6 +11,8 @@ eureka:
 ---
 spring:
   profiles: statefulset
+eureka:
+  client:
     enabled: true
     healthcheck:
       enabled: true
