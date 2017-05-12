@@ -5,7 +5,7 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka-service-0.eureka-service.eregistry.svc.cluster.local:8761/eureka/,http://eureka-service-1.eureka-service.eregistry.svc.cluster.local:8761/eureka/
+      defaultZone: http://eureka-service-0.eureka-service:8761/eureka/,http://eureka-service-1.eureka-service:8761/eureka/
     enabled: true
     healthcheck:
       enabled: true
