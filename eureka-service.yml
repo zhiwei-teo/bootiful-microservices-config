@@ -15,7 +15,7 @@ eureka:
   client:
     enabled: true
     service-url:
-      defaultZone: http://eureka-service-0.eureka-service:8761/eureka/,http://eureka-service-1.eureka-service:8761/eureka/
+      defaultZone: http://eureka-service-0.eureka-service/eureka/,http://eureka-service-1.eureka-service/eureka/
     healthcheck:
       enabled: true
     fetch-registry: true
